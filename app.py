@@ -35,18 +35,18 @@ def predict():
     else:
         return render_template('index2.html')
 
-@app.route('/predict_api', methods=['POST'])
-def predict_api():
-    try:
-        data = request.get_json(force=True)
-        if model is not None and scaler is not None:
-            prediction = model.predict([np.array(list(data.values()))])
-            output = prediction[0]
-            return jsonify({'prediction': output})
-        else:
-            return jsonify({'error': 'Model or scaler not loaded.'})
-    except Exception as e:
-        return jsonify({'error': str(e)})
+# @app.route('/predict_api', methods=['POST'])
+# def predict_api():
+#     try:
+#         data = request.get_json(force=True)
+#         if model is not None and scaler is not None:
+#             prediction = model.predict([np.array(list(data.values()))])
+#             output = prediction[0]
+#             return jsonify({'prediction': output})
+#         else:
+#             return jsonify({'error': 'Model or scaler not loaded.'})
+#     except Exception as e:
+#         return jsonify({'error': str(e)})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
