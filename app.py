@@ -39,9 +39,8 @@ def predict():
 def predict_api():
     try:
         data = request.get_json(force=True)
-        features = [float(x) for x in request.form.values()]
         if model is not None and scaler is not None:
-            input_data = np.array(features).reshape(1, -1)
+            input_data = np.array(list(data.values())).reshape(1, -1)
             scaled_features = scaler.transform(input_data)
             prediction = model.predict(scaled_features)
             output = prediction[0]
