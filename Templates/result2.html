@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="globals.css" /> -->
+    <!-- <link rel="stylesheet" href="styleguide.css" /> -->
+    <!-- <link rel="stylesheet" href="../Static/style2.css" /> -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+
+<body>
+    <div class="hero-section">
+        <div class="ellipse"></div>
+        <div class="column">
+            <div class="content">
+                <p class="text-wrapper">CROP PREDICTION SOFTWARE</p>
+                <p class="text-s">
+                    crow crow
+                </p>
+            </div>
+            <!-- <div class="frame">
+          <button class="actions">
+            <button class="button"><div class="div">Contact Us</div></button>
+          </button>
+        </div> -->
+        </div>
+        <div class="navbar">
+            <div class="container">
+                <div class="frame-wrapper">
+                    <div class="frame-2">
+                        <div class="text-wrapper-2">KheetiKhoojo</div>
+                    </div>
+                </div>
+                <div class="column-2">
+                    <div class="column-3">
+                        <div class="text-wrapper-3">Home</div>
+                        <div class="text-wrapper-3">Predict</div>
+                    </div>
+                    <button class="button-wrapper">
+                        <button class="div-wrapper">
+                            <div class="text-wrapper-4">Contact Us</div>
+                        </button>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- prediction page -->
+
+    <div class="prediction-pg">
+        <div class="text">
+            <div class="title-description">
+                <div class="title">
+                    <div class="text-wrapper">CROP PREDICTION</div>
+                    <div class="dissuade-ecstatic">Enter details</div>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+
+
+            <form action="/predict" method="POST">
+                <div class="parameters">
+                    <label for="nitrogen" class="label-wrapper">Nitrogen Content</label>
+                    <input type="text" id="nitrogen" name="nitrogen" placeholder="Nitrogen Content" required="required">
+                </div>
+                <div class="parameters">
+                    <label for="phorsporus" class="label-wrapper">Phorsporus Content</label>
+                    <input type="text" id="phorsporus" name="phorsporus" placeholder="Phorsporus Content" required="required">
+                </div>
+                <div class="parameters">
+                    <label for="pottasium" class="label-wrapper">Pottasium Content</label>
+                    <input type="text" id="Pottasium" name="Pottasium" placeholder="Pottasium Content" required="required">
+                </div>
+                <div class="parameters">
+                    <label for="temperature" class="label-wrapper">Temperature</label>
+                    <input type="text" id="temperature" name="temperature" placeholder="Temperature" required="required">
+                </div>
+                <div class="parameters">
+                    <label for="humidity" class="label-wrapper">Humidity Level</label>
+                    <input type="text" id="humidity" name="humidity" placeholder="Humidity Level" required="required">
+                </div>
+                <div class="parameters">
+                    <label for="pH" class="label-wrapper">pH Value</label>
+                    <input type="text" id="pH" name="pH" placeholder="pH Value" required="required">
+                </div>
+                <div class="parameters">
+                    <label for="rainfall" class="label-wrapper">Rainfall</label>
+                    <input type="text" id="rainfall" name="rainfall" placeholder="Rainfall" required="required">
+                </div>
+                <button type="submit" class="div-wrapper">
+                    <div class="text-wrapper-4">
+                    PREDICT    
+                    </div>
+                </button>
+            </form>
+            <div class="empty"></div>
+        </div>
+    </div>
+
+    <!-- result -->
+    <div class="result">
+        <div class="main-text">
+            PREDICTION IS
+        </div>
+        <div class="answer">
+            {{ prediction_text }}
+        </div>
+    </div>
+</body>
+
+</html>
