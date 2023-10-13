@@ -1,4 +1,4 @@
-﻿absl-py==1.4.0
+absl-py==1.4.0
 asttokens==2.4.0
 attrs==22.2.0
 backcall==0.2.0
